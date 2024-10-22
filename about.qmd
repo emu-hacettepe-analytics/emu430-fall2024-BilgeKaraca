@@ -3,28 +3,34 @@ title: "About Me"
 sidebar: false 
 ---
 
+Hello, my name is Bilge Karaca. I am a senior Industrial Engineering student at Hacettepe University - Ankara. You can find further information about me below.
+
 # Education
 
--   B.S., Industrial Engineering, Hacettepe University, Turkey, 20xx - ongoing.
+-   B.S., Industrial Engineering, Hacettepe University, Turkey, 2020 - ongoing.
 
 # Work Experience
 
-## Employements
-
-1.  Firm xxx, position xx, year xxx
-
-2.  Firm yyy, position yyy, year yyy
-
 ## Internships
 
-1.  Firm aaa, position xx, year xxx
+1.  **MAN Türkiye A.Ş.** , Production Intern , 24/06/2024 - 22/07/2024
 
-2.  Firm bbb, position yyy, year yyy
+2.  **GDZ Elektrik Dağıtım A.Ş.** , Data Analytics Intern , 10/07/2023 - 04/09/2023
 
 # Projects
 
+-   Graduation Project, Line Balancing in The Mechanical Assembly Unit, **MAN Türkiye A.Ş**. , 2024
+
+-   She-nergy Program, Lifetime Estimation for Power Transformers, **Enerjisa Dağıtım**, 2024
+
 # Competencies
 
-R, Quarto, Git, Python
+R, Quarto, Git, Python, Minitab, AutoCAD, MS Office Programs
 
 # Hobbies
+
+Painting, Playing Badminton
+
+# Resume
+
+Click here to view my resume file: [Bilge Karaca Resume](https://drive.google.com/drive/folders/17cJBFBxc_W_npS0K2ZZT0yxh83HMr6go?usp=drive_link)

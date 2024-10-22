@@ -1,12 +1,12 @@
 ---
-title: "Welcome to My Analytics Lab"
+title: "Welcome to Bilge's Analytics Lab"
 sidebar: false 
 ---
 
-Hello! My name is xxx xxxx.
+Hello! My name is Bilge Karaca.
 
 This is my personal webpage.
 
 Please stay tuned to follow my works on data analytics, blog posts, and more.
 
-This is our template.
+![](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzNzaHVyMWhldHRxdTN6cTEzdTZzdGxjbTk0bDAyMWk1amw0a2hjOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/V4EJ4p9HtRpqnTwumB/giphy.gif){alt="description" width="200"}
