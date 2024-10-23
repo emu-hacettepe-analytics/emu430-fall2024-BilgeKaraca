@@ -2,14 +2,132 @@
 title: "Assignment 1"
 ---
 
-# Assignment 1
-
-```{r}
-1 + 1
-```
-
 My first assignment has two parts.
 
-## (a)
+## (a) summary
 
-## (b)
+## (b) poll_us_election_2016 dataset
+
+In part b, I completed the tasks given on the dataset named "poll_us_election_2016".
+
+-   First, I imported the dataset named polls_us_election_2016 in the dslabs package and wanted to see its general content.
+
+```{r}
+# importing the dataset 
+
+library(dslabs)
+
+data(polls_us_election_2016)
+
+# general structre of the dataset
+
+str(polls_us_election_2016)
+```
+
+As seen here, the data set contains 15 variables/columns and 4208 rows. The columns contain numeric, character and factor data types.
+
+-   Then I displayed the first 10 lines.
+
+```{r}
+# displaying the first 10 rows 
+
+(polls_us_election_2016[1:10,])
+```
+
+-   Then I found the total number of NA values ​​in the entire dataset.
+
+```{r}
+# calculating the total number of NA values 
+
+sum(is.na(polls_us_election_2016))
+```
+
+-   Then I assigned it as a new variable to preserve the original dataset. I continued my subsequent work on this dataset, which I named new_data.
+
+```{r}
+new_data <- polls_us_election_2016
+```
+
+-   Then I found which columns in this data set were numeric, which were character, and which were factor. I assigned the relevant indexes of each as variables.
+
+```{r}
+# assigning indexes to variables according to data types
+
+numeric_columns <- which(sapply(new_data, is.numeric))
+
+character_columns <- which(sapply(new_data, is.character))
+
+factor_columns <- which(sapply(new_data, is.factor))
+
+print(c("numeric: ", numeric_columns ,"character: ", character_columns, "Factor: ", factor_columns))
+```
+
+-   Then, I replaced the NA values ​​in the columns with numeric data type with my birth year, 2002. I replaced the NA values ​​in the columns with data types character and factor with my name Bilge. In order to make changes to the factor type, I first had to change its type to character. After assigning the Bilge name, I changed the data type back to factor.
+
+```{r}
+# replacing NA values in numeric columns with 2002
+
+for (i in numeric_columns) {
+  
+  new_data[is.na(new_data[, i]), i] <- 2002
+  
+}
+
+# replacing NA values in character columns with Bilge
+
+for (i in character_columns) {
+  
+  new_data[is.na(new_data[, i]), i] <- "Bilge"
+  
+}
+
+# replacing NA values in factor columns with Bilge
+
+for (i in factor_columns) {
+  
+  new_data[, i] <- as.character(new_data[, i])  
+  new_data[is.na(new_data[, i]), i] <- "Bilge"
+  new_data[, i] <- as.factor(new_data[, i]) 
+}
+```
+
+-   Then I displayed the first 10 rows of this newly created dataset.
+
+```{r}
+# displaying first 10 row
+
+new_data[1:10,]
+```
+
+-   Finally, I calculated how many NA values ​​were in the newly created dataset.
+
+```{r}
+# calculating the total number of NA values
+
+sum(is.na(new_data))
+```
+
+I used AI in 2 different places in this assignment.
+
+-   First, I wrote the following prompt to ChatGPT to find out which columns are numeric:
+
+If the data type of the columns is numeric, I want to assign the indexes of those columns to a variable called numeric_columns. and the answer is:
+
+```{r}
+numeric_columns <- which(sapply(new_data, is.numeric))
+```
+
+I also applied this structure for character and factor ones.
+
+-   Secondly, I could not change the NA values ​​in the factor data type. I asked ChatGPT for help on this issue:
+
+I get an error when changing the values ​​in the factor data type. How can I solve this? According to his answer, I should first convert it to the character data type and then back to the factor data type
+
+```{r}
+for (i in factor_columns) {
+  
+  new_data[, i] <- as.character(new_data[, i])  
+  new_data[is.na(new_data[, i]), i] <- "Bilge"
+  new_data[, i] <- as.factor(new_data[, i]) 
+}
+```
