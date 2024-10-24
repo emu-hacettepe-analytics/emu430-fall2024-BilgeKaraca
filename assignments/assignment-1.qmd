@@ -4,7 +4,47 @@ title: "Assignment 1"
 
 My first assignment has two parts.
 
-## (a) summary
+## (a) summary of the video
+
+In part A, I watched the video "[Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Baykal Hafızoğlu & Erdi Daşdemir](https://www.youtube.com/watch?v=tV_0pHSdLAM)" and extracted the brief summary. I have listed the conclusions I made below:
+
+-   The world of Operational Research / Analytics can be examined under 4 basic categories. These are:
+
+1.  **Descriptive Analytics**: It covers defining data and understanding the details thoroughly. It is the easiest category in terms of complexity but low in terms of value. Data mining, time series analysis, data visualization are among the methods used.
+
+2.  **Diagnostic Analytics**: It aims to diagnose problems. Hypothesis testing, clustering, regression are among the methods used.
+
+3.  **Predictive Analytics**: It aims to predict what will happen in the future. Simulation, clustering, regression, machine learning are among the methods used.
+
+4.  **Prescriptive Analytics**: It aims to make action suggestions. Although it is the category with the highest complexity, its value is also high. Optimization, heuristics, math modeling are among the methods used.
+
+-   Analytical solutions can be divided into **Operational** (several times a day), **Tactical** (once or twice a month), **Strategical** (once in a few years) according to their frequency of use.
+
+-   All projects should start with a clear and concise problem definition. At this stage, KPIs, success criteria should be determined and descriptive analyses should be performed.
+
+-   The model produced at the model deployment stage should be suitable for the user and the sector. It should be applicable in real life and easy to use. The platform used and early prototyping are critical. Communication with the end user and the user interface are of critical importance. Even if the model is developed correctly, if it does not meet the user's requests, the model will not work.
+
+-   At the last stage, it should be stated how much the KPIs specified at the beginning were developed using this model. In addition, it is always better for the solution to be easily explained compared to complex models.
+
+Afterwards, I prepared two questions about this video, one open-ended and one multiple-choice:
+
+1.  What is the most critical concept in the model deployment process?
+
+    **Answer:** The user interface is the most important element at this stage. The model must fully comply with the end user's requests and needs so that the user can adapt to the model.
+
+2.  Which of the following is not one of the categories in which we classify analytical solutions based on frequency of use?
+
+<!-- -->
+
+A)  Tactical
+
+B)  Operational
+
+C)  Strategical
+
+D)  Executional
+
+**Answer:** D
 
 ## (b) poll_us_election_2016 dataset
 
@@ -111,7 +151,7 @@ I used AI in 2 different places in this assignment.
 
 -   First, I wrote the following prompt to ChatGPT to find out which columns are numeric:
 
-If the data type of the columns is numeric, I want to assign the indexes of those columns to a variable called numeric_columns. and the answer is:
+If the data type of the columns is numeric, I want to assign the indexes of those columns to a variable called numeric_columns and the answer is:
 
 ```{r}
 numeric_columns <- which(sapply(new_data, is.numeric))
@@ -121,7 +161,7 @@ I also applied this structure for character and factor ones.
 
 -   Secondly, I could not change the NA values ​​in the factor data type. I asked ChatGPT for help on this issue:
 
-I get an error when changing the values ​​in the factor data type. How can I solve this? According to his answer, I should first convert it to the character data type and then back to the factor data type
+I get an error when changing the values ​​in the factor data type. How can I solve this? According to answer, I should first convert it to the character data type and then back to the factor data type:
 
 ```{r}
 for (i in factor_columns) {

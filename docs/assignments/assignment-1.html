@@ -211,7 +211,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#a-summary" id="toc-a-summary" class="nav-link active" data-scroll-target="#a-summary">(a) summary</a></li>
+  <li><a href="#a-summary-of-the-video" id="toc-a-summary-of-the-video" class="nav-link active" data-scroll-target="#a-summary-of-the-video">(a) summary of the video</a></li>
   <li><a href="#b-poll_us_election_2016-dataset" id="toc-b-poll_us_election_2016-dataset" class="nav-link" data-scroll-target="#b-poll_us_election_2016-dataset">(b) poll_us_election_2016 dataset</a></li>
   </ul>
 </nav>
@@ -243,8 +243,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>My first assignment has two parts.</p>
-<section id="a-summary" class="level2">
-<h2 class="anchored" data-anchor-id="a-summary">(a) summary</h2>
+<section id="a-summary-of-the-video" class="level2">
+<h2 class="anchored" data-anchor-id="a-summary-of-the-video">(a) summary of the video</h2>
+<p>In part A, I watched the video “<a href="https://www.youtube.com/watch?v=tV_0pHSdLAM">Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Baykal Hafızoğlu &amp; Erdi Daşdemir</a>” and extracted the brief summary. I have listed the conclusions I made below:</p>
+<ul>
+<li>The world of Operational Research / Analytics can be examined under 4 basic categories. These are:</li>
+</ul>
+<ol type="1">
+<li><p><strong>Descriptive Analytics</strong>: It covers defining data and understanding the details thoroughly. It is the easiest category in terms of complexity but low in terms of value. Data mining, time series analysis, data visualization are among the methods used.</p></li>
+<li><p><strong>Diagnostic Analytics</strong>: It aims to diagnose problems. Hypothesis testing, clustering, regression are among the methods used.</p></li>
+<li><p><strong>Predictive Analytics</strong>: It aims to predict what will happen in the future. Simulation, clustering, regression, machine learning are among the methods used.</p></li>
+<li><p><strong>Prescriptive Analytics</strong>: It aims to make action suggestions. Although it is the category with the highest complexity, its value is also high. Optimization, heuristics, math modeling are among the methods used.</p></li>
+</ol>
+<ul>
+<li><p>Analytical solutions can be divided into <strong>Operational</strong> (several times a day), <strong>Tactical</strong> (once or twice a month), <strong>Strategical</strong> (once in a few years) according to their frequency of use.</p></li>
+<li><p>All projects should start with a clear and concise problem definition. At this stage, KPIs, success criteria should be determined and descriptive analyses should be performed.</p></li>
+<li><p>The model produced at the model deployment stage should be suitable for the user and the sector. It should be applicable in real life and easy to use. The platform used and early prototyping are critical. Communication with the end user and the user interface are of critical importance. Even if the model is developed correctly, if it does not meet the user’s requests, the model will not work.</p></li>
+<li><p>At the last stage, it should be stated how much the KPIs specified at the beginning were developed using this model. In addition, it is always better for the solution to be easily explained compared to complex models.</p></li>
+</ul>
+<p>Afterwards, I prepared two questions about this video, one open-ended and one multiple-choice:</p>
+<ol type="1">
+<li><p>What is the most critical concept in the model deployment process?</p>
+<p><strong>Answer:</strong> The user interface is the most important element at this stage. The model must fully comply with the end user’s requests and needs so that the user can adapt to the model.</p></li>
+<li><p>Which of the following is not one of the categories in which we classify analytical solutions based on frequency of use?</p></li>
+</ol>
+<!-- -->
+<ol type="A">
+<li><p>Tactical</p></li>
+<li><p>Operational</p></li>
+<li><p>Strategical</p></li>
+<li><p>Executional</p></li>
+</ol>
+<p><strong>Answer:</strong> D</p>
 </section>
 <section id="b-poll_us_election_2016-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="b-poll_us_election_2016-dataset">(b) poll_us_election_2016 dataset</h2>
@@ -475,7 +505,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>First, I wrote the following prompt to ChatGPT to find out which columns are numeric:</li>
 </ul>
-<p>If the data type of the columns is numeric, I want to assign the indexes of those columns to a variable called numeric_columns. and the answer is:</p>
+<p>If the data type of the columns is numeric, I want to assign the indexes of those columns to a variable called numeric_columns and the answer is:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>numeric_columns <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">sapply</span>(new_data, is.numeric))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -483,7 +513,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Secondly, I could not change the NA values ​​in the factor data type. I asked ChatGPT for help on this issue:</li>
 </ul>
-<p>I get an error when changing the values ​​in the factor data type. How can I solve this? According to his answer, I should first convert it to the character data type and then back to the factor data type</p>
+<p>I get an error when changing the values ​​in the factor data type. How can I solve this? According to answer, I should first convert it to the character data type and then back to the factor data type:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> factor_columns) {</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  </span>
