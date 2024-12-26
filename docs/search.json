@@ -4,7 +4,7 @@
     "href": "project.html",
     "title": "Our Course Project",
     "section": "",
-    "text": "I’m honored to be a member of the [group name] project team.\nBelow, you’ll find a brief summary of our project. To access a detailed project description, please go to https://[your-project-url].\nSummary\n[provide a biref summary of your project]\n\n\n\n Back to top"
+    "text": "I’m honored to be a member of the ANALYTICA project team.\nBelow, you’ll find a brief summary of our project. To access a detailed project description, please go to https://emu-hacettepe-analytics.github.io/emu430-fall2024-team-analytica/\nSummary\nTraffic accidents pose a significant challenge for cities, affecting safety, traffic flow, and public well-being. To better understand the dynamics of traffic accidents in İzmir, we utilized the data set titled “İzmir Metropolitan Municipality Defective, Accident Vehicle Data”, published on the İzmir Metropolitan Municipality Open Data Portal. This data set provides valuable information such as the date, type, time, and destination of traffic accidents that occurred within the metropolitan area.\nThe primary aim of this project is to analyze and interpret the data to uncover patterns, identify critical problem areas, and offer insights that can contribute to improved traffic management and accident prevention strategies.\n\n\n\n Back to top"
   },
   {
     "objectID": "index.html",
