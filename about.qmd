@@ -19,7 +19,9 @@ Hello, my name is Bilge Karaca. I am a senior Industrial Engineering student at 
 
 # Projects
 
--   Graduation Project, Line Balancing in The Mechanical Assembly Unit, **MAN Türkiye A.Ş**. , 2024
+-   Graduation Project, Line Balancing in The Body Structure Unit, **MAN Türkiye**, 2024-2025
+
+-   WE-inTech Program, Data Analysis Study in the Complexity and Modularity Unit, **Arçelik Türkiye,** 2024-2025
 
 -   She-nergy Program, Lifetime Estimation for Power Transformers, **Enerjisa Dağıtım**, 2024
 
