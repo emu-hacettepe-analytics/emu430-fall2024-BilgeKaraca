@@ -283,6 +283,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>First, I imported the dataset named polls_us_election_2016 in the dslabs package and wanted to see its general content.</li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># importing the dataset </span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dslabs)</span>
@@ -292,6 +294,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># general structre of the dataset</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(polls_us_election_2016)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   4208 obs. of  15 variables:
  $ state           : Factor w/ 57 levels "Alabama","Alaska",..: 50 50 50 50 50 50 50 50 37 50 ...
@@ -316,9 +319,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Then I displayed the first 10 lines.</li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># displaying the first 10 rows </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>(polls_us_election_2016[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>        state  startdate    enddate
 1        U.S. 2016-11-03 2016-11-06
@@ -370,9 +376,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Then I found the total number of NA values ​​in the entire dataset.</li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculating the total number of NA values </span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(polls_us_election_2016))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 11604</code></pre>
 </div>
@@ -381,12 +390,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Then I assigned it as a new variable to preserve the original dataset. I continued my subsequent work on this dataset, which I named new_data.</li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>new_data <span class="ot">&lt;-</span> polls_us_election_2016</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <ul>
 <li>Then I found which columns in this data set were numeric, which were character, and which were factor. I assigned the relevant indexes of each as variables.</li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># assigning indexes to variables according to data types</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>numeric_columns <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">sapply</span>(new_data, is.numeric))</span>
@@ -396,6 +410,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>factor_columns <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">sapply</span>(new_data, is.factor))</span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">c</span>(<span class="st">"numeric: "</span>, numeric_columns ,<span class="st">"character: "</span>, character_columns, <span class="st">"Factor: "</span>, factor_columns))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>                       samplesize  rawpoll_clinton    rawpoll_trump 
      "numeric: "              "6"              "8"              "9" 
@@ -411,6 +426,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Then, I replaced the NA values ​​in the columns with numeric data type with my birth year, 2002. I replaced the NA values ​​in the columns with data types character and factor with my name Bilge. In order to make changes to the factor type, I first had to change its type to character. After assigning the Bilge name, I changed the data type back to factor.</li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># replacing NA values in numeric columns with 2002</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> numeric_columns) {</span>
@@ -435,14 +452,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>  new_data[<span class="fu">is.na</span>(new_data[, i]), i] <span class="ot">&lt;-</span> <span class="st">"Bilge"</span></span>
 <span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>  new_data[, i] <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(new_data[, i]) </span>
 <span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <ul>
 <li>Then I displayed the first 10 rows of this newly created dataset.</li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># displaying first 10 row</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>new_data[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>        state  startdate    enddate
 1        U.S. 2016-11-03 2016-11-06
@@ -494,9 +515,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Finally, I calculated how many NA values ​​were in the newly created dataset.</li>
 </ul>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># calculating the total number of NA values</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(new_data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0</code></pre>
 </div>
@@ -507,7 +531,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>If the data type of the columns is numeric, I want to assign the indexes of those columns to a variable called numeric_columns and the answer is:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>numeric_columns <span class="ot">&lt;-</span> <span class="fu">which</span>(<span class="fu">sapply</span>(new_data, is.numeric))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>I also applied this structure for character and factor ones.</p>
 <ul>
@@ -515,12 +542,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>I get an error when changing the values ​​in the factor data type. How can I solve this? According to answer, I should first convert it to the character data type and then back to the factor data type:</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> factor_columns) {</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  new_data[, i] <span class="ot">&lt;-</span> <span class="fu">as.character</span>(new_data[, i])  </span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  new_data[<span class="fu">is.na</span>(new_data[, i]), i] <span class="ot">&lt;-</span> <span class="st">"Bilge"</span></span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  new_data[, i] <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(new_data[, i]) </span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 
 

@@ -1,10 +1,3 @@
----
-title: "Assignment 2"
----
-
-## Scrapping IMDB Dataset
-
-```{r include=FALSE}
 # Turkish characters detection
 
 Sys.setlocale("LC_ALL", "Turkish")
@@ -15,9 +8,6 @@ library(tidyverse)
 library(rvest) 
 library(stringr) 
 library(ggplot2)
-```
-
-```{r}
 
 # combining 2 URL's into a single vector
 
@@ -35,7 +25,7 @@ durations <- c()
 ratings <- c()
 votes <- c()
 
-# Scrapping the data
+# Scraping the data
 
 for (url in combine_vector) {
   page <- read_html(url)
@@ -109,17 +99,11 @@ imdb_data <- data.frame(Title = titles, Year = years, Duration = durations, Rati
 
 # Print the first few rows
 print(head(imdb_data))
-```
 
--   As seen here, our data set, which we scrapped from the IMDB website, contains the columns Title, Year, Duration, Rating and Votes respectively. Votes values ​​here represent thousands. (16 =\> 16K, 4.1 =\> 4.1K)
 
--   Due to the problem that arose during the scrapping process, the dataset consists of 50 movies, 25 in the first URL (between 2009 and 2023) and the first 25 in the second URL (before 2009).
 
--   Since the data set does not include all movies, the comments made are based on only the 50 movies selected here for all Turkish movies.
 
-## Finding the Highest and Lowest Rated Movies
 
-```{r}
 # Sort by rating in descending order and get the top 5
 
 top_5 <- imdb_data %>% 
@@ -127,13 +111,7 @@ top_5 <- imdb_data %>%
   head(5)
 
 print(top_5)
-```
 
--   As seen here, the top 5 movies with the highest ratings are "Hababam Sınıfı", "Yedinci Koğuştaki Mucize", "Ayla", "Dağ2" and "Babam ve Oğlum".
-
--   I have only watched Hababam Sınıfı out of these movies and I can say that it deserves such a high rating without a doubt.
-
-```{r}
 # Sort by rating in ascending order and get the bottom 5
 
 bottom_5 <- imdb_data %>% 
@@ -141,29 +119,20 @@ bottom_5 <- imdb_data %>%
   head(5)
 
 print(bottom_5)
-```
 
--   As seen here, the top 5 movies with the lowest ratings are "Bihter", "Dabbe", "Recep İvedik", "İstanbul İçin Son Çağrı" and "Kurtlar Vadisi: Irak".
 
--   The fact that I haven't watched any of these movies may be a sign that I have good taste in movies. 😀
 
-## Seeing Rating Values ​​of Selected Movies
-
-```{r}
 # Filter the data for the movies "Aile Arasında" and "Av Mevsimi"
 selected_movies <- imdb_data %>% 
-  filter(Title %in% c("Aile Arasinda", "Av Mevsimi"))
+  filter(Title %in% c("Aile Arasında", "Av Mevsimi"))
 
 # Print the results
+cat("Ratings for the selected movies:\n")
 print(selected_movies[, c("Title", "Rating")])
 
-```
 
--   Here you can see the rating values ​​of my favorite movies, "Aile Arasında" and "Av Mevsimi". I was expecting it to come out between 7 and 8.
 
-## Yearly Average Movie Ratings
 
-```{r}
 # Calculate the average rating for each year
 yearly_avg <- imdb_data %>%
   group_by(Year) %>%
@@ -184,13 +153,9 @@ ggplot(yearly_avg, aes(x = Year, y = Average_Rating)) +
     axis.title.x = element_text(size = 12),
     axis.title.y = element_text(size = 12)
   )
-```
 
--   This chart shows the average rating values ​​of movies for each year and their changes from year to year. Accordingly, it can be seen that there was a sharp decline in the early 2000s and that it fluctuated after that point. I would like to remind you again that these comments do not reflect the truth, as our data set only includes 50 films.
 
-## Box Plot of Movie Ratings by Year
 
-```{r}
 # Create a box plot for yearly movie ratings
 ggplot(imdb_data, aes(x = factor(Year), y = Rating)) +
   geom_boxplot(fill = "skyblue", color = "darkblue", outlier.color = "red") +
@@ -206,37 +171,23 @@ ggplot(imdb_data, aes(x = factor(Year), y = Rating)) +
     axis.title.y = element_text(size = 12),
     axis.text.x = element_text(angle = 45, hjust = 1)
   )
-```
 
--   As can be seen here, the rating values ​​of the films in 2006 and 2023 were more widely distributed compared to other years. Since "Hababam Sınıfı" had the highest rating value in 1975, it was the highest in both this and the previous graph.
 
-## Correlation Between Votes and Ratings
 
-```{r}
+
+
 # Calculate correlation between Votes and Rating
 correlation <- cor(imdb_data$Votes, imdb_data$Rating, use = "complete.obs")
 
 # Print the correlation result
 print(paste("Correlation between Votes and Rating: ", correlation))
-```
 
--   As seen here, the correlation between votes and rating is not very clear. We cannot say that a movie that gets a lot of votes will have a high rating value.
 
-## Correlation Between Durations and Ratings
 
-```{r}
-# Calculate correlation between Durations and Rating
-correlation <- cor(imdb_data$Duration, imdb_data$Rating, use = "complete.obs")
 
-# Print the correlation result
-print(paste("Correlation between Durations and Rating: ", correlation))
-```
 
--   Here, the correlation between duration and rating is much lower. There is almost no relationship between them.
 
-## IMDB Top 1000 Turkish Movies
 
-```{r}
 # Scrapping Turkish Movies in top 1000
 
 url_new <- "https://m.imdb.com/search/title/?title_type=feature&groups=top_1000&country_of_origin=TR"
@@ -321,49 +272,13 @@ top1000_turkish <- data.frame(Title = titles, Year = years, Duration = durations
 
 # Print the dataframe 
 print(top1000_turkish[1:2])
-```
 
--   Here we see Turkish movies that are among the top 1000 movies on IMDB. There are 11 movies in total.
 
-```{r}
+
 # Sorting from largest to smallest according to rating value
 top1000_turkish_sorted <- top1000_turkish[order(-top1000_turkish$Rating), ]
 
 print(top1000_turkish_sorted)
-```
 
--   Here is a list of these 11 movies ranked by rating.
 
--   This ranking does not match the ranking I made before. For example, Hababam Sınıfı is not even on the list. For this reason, I think they may have considered other categories besides rating.
 
-.
-
-.
-
-.
-
-We have come to the end of our EMU430 Course
-
-.
-
-.
-
-.
-
-Take care of yourself
-
-.
-
-.
-
-.
-
-Don't miss data from your life
-
-.
-
-.
-
-.
-
-[![](https://media.giphy.com/media/RXGHdTCLWTOZWrsHOV/giphy.gif?cid=790b7611o7ivjk7649x3lo1fpswpgww0i5znyvufgjzblp3x&ep=v1_gifs_search&rid=giphy.gif&ct=g){width="300"}](https://media.giphy.com/media/RXGHdTCLWTOZWrsHOV/giphy.gif?cid=790b7611o7ivjk7649x3lo1fpswpgww0i5znyvufgjzblp3x&ep=v1_gifs_search&rid=giphy.gif&ct=g)
